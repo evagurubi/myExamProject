@@ -34,7 +34,7 @@ function Contribution() {
   };
 
   return (
-    <div>
+    <div className="contributionbox">
       <form onSubmit={(e) => e.preventDefault()}>
         <input type="text" id="title" name="title" placeholder="TITLE" />
         <input

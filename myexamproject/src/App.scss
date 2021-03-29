@@ -1,0 +1,88 @@
+$mainbackground: #cafafe;
+$myotherblue: #55bcc9;
+$myblue: #4056a1;
+$mycloud: #97caef;
+$myred: #fc4445;
+$mylightblue: #3feee6;
+
+@mixin hiddenbutton {
+  border: none;
+  background-color: $mainbackground;
+  color: $myblue;
+  font-weight: bolder;
+}
+
+@mixin myborders {
+}
+@mixin searchbox {
+  margin: 5px 0px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+body {
+  margin: 0px;
+  box-sizing: border-box;
+  background-color: $mainbackground;
+  width: 100vw;
+}
+.App {
+  margin: 1% 3%;
+  display: grid;
+  grid-template-areas:
+    "intro intro"
+    "articles searchcomponent"
+    "articles contributions";
+  gap: 5%;
+  .intro {
+    width: 100%;
+    grid-area: intro;
+    border: 8px solid $mycloud;
+    background-color: $myred;
+    padding: 5px;
+  }
+  .articles {
+    background-color: $mylightblue;
+    width: 100%;
+    grid-area: articles;
+    border: solid 5px $myred;
+    padding: 10px;
+    .articlecontent {
+      background-color: $mylightblue;
+      @include searchbox();
+      border: 5px solid $myblue;
+    }
+  }
+  .searchcomponent {
+    background-color: $mycloud;
+    width: 100%;
+    grid-area: searchcomponent;
+    border: solid 5px $myotherblue;
+    padding: 10px;
+
+    .search {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .searchform {
+        @include searchbox();
+        border: 5px solid $myred;
+      }
+    }
+  }
+  .contributions {
+    background-color: $myred;
+    padding: 10px;
+    width: 100%;
+    grid-area: contributions;
+    @include myborders();
+    button {
+      @include hiddenbutton();
+      cursor: pointer;
+      padding: 5px;
+    }
+    .contributionbox {
+      @include searchbox();
+    }
+  }
+}
