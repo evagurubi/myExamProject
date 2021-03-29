@@ -18,6 +18,36 @@ app.get("/articles", function (req, res) {
   res.send(articlesDirectory);
 });
 
+app.post("/articles", function (req, resp) {
+  const {
+    ref,
+    title,
+    keywords,
+    warmer,
+    content,
+    photoURL,
+    originalURL,
+  } = req.body;
+  const article = {
+    ref,
+    title,
+    keywords,
+    warmer,
+    content,
+    photoURL,
+    originalURL,
+  };
+  articlesDirectory.push(article);
+  fs.writeFileSync(
+    "./articles.json",
+    JSON.stringify(articlesDirectory),
+    (err) => {
+      if (err) console.log("Error writing file:", err);
+    }
+  );
+  resp.send(articlesDirectory);
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
