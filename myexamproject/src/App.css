@@ -16,7 +16,7 @@ body {
   grid-area: intro;
   border: 8px solid #97caef;
   background-color: #fc4445;
-  padding: 5px;
+  padding: 0px 20px;
 }
 .App .articles {
   background-color: #3feee6;
@@ -55,6 +55,7 @@ body {
   padding: 10px;
   width: 100%;
   grid-area: contributions;
+  border: solid 5px #3feee6;
 }
 .App .contributions button {
   border: none;

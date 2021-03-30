@@ -1,3 +1,5 @@
+//FOUR MAIN COMPONENTS, THE INTRO IS NOT WRITTEN IN A SEPARATE ONE, IT HAS NO SPECIAL FUNCTION.
+
 import React from "react";
 import { useState, useEffect } from "react";
 import "./App.css";

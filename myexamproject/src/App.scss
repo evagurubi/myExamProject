@@ -12,8 +12,6 @@ $mylightblue: #3feee6;
   font-weight: bolder;
 }
 
-@mixin myborders {
-}
 @mixin searchbox {
   margin: 5px 0px;
   padding: 5px;
@@ -39,7 +37,7 @@ body {
     grid-area: intro;
     border: 8px solid $mycloud;
     background-color: $myred;
-    padding: 5px;
+    padding: 0px 20px;
   }
   .articles {
     background-color: $mylightblue;
@@ -75,7 +73,8 @@ body {
     padding: 10px;
     width: 100%;
     grid-area: contributions;
-    @include myborders();
+    border: solid 5px $mylightblue;
+
     button {
       @include hiddenbutton();
       cursor: pointer;

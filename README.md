@@ -1,2 +1,8 @@
 # myExamProject
-A website with relevant articles and related activities for teachers of English as a second language
+
+THE BACKGROUND STORY: I think the English faculty of any secondary school or language school could make good use of a database of activities that is based on news articles, relevant issues, current events etc. all very "authentic". And teachers need ideas for warmers, links to articles, more background info as well as "useable" photos/ images that students can compare and contrast. It is beyond the scope of a 'one afternoon exam project' such as this one, but I have tried to lay the foundations. It was not a project requirement to send post requests but for me that's the soul of such a cooperative database. Teachers could search by keyword or title, but content is also made searchable - partly because it was one of the requirements :)) but also because we just want to show students how one particular expression might come up in an authentic text.
+
+GENERAL REQUIREMENTS AND FOCUS POINTS: There is an articles endpoint at the backend, titles, keywords, content summary, links etc. are stored in the articles.json file. At the front end, the article component will list titles, if the enduser is interested, they can go on to use the activities, first a warmer comes up and then a second button is offered to go on to the article and the links.
+There is a search component to serve the search requirements detailed above. The contribution component makes it possible to post new activities. It definitely needs some development but for our purposes it should be OK. Data submitted will be written in the articles.json file.
+
+LAYOUT AND STYLING: I used SASS and thought grid was the obvious choice to manage layout.

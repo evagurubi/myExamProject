@@ -1,3 +1,5 @@
+//USERS CAN POST ACTIVITIES HERE. AT THE BACKEND ACTIVITIES WILL BE ADDED TO THE ARTICLES.JSON FILE.
+
 import React, { useState, useEffect } from "react";
 import "../../src/App.css";
 

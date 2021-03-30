@@ -1,3 +1,5 @@
+//TWO FORMS TO FULFILL TWO SEARCH REQUIREMENTS.
+
 import React, { useState } from "react";
 import "../../src/App.css";
 
@@ -11,9 +13,8 @@ function SearchComponent({ data }) {
     let myWord = event.target.form[0].value;
     let newFilteredListValue = data.filter(
       (article) =>
-        article.keywords.includes(myWord) ||
-        article.title.includes(myWord) ||
-        article.content.includes(myWord)
+        (article.keywords.includes(myWord) || article.title.includes(myWord)) &&
+        myWord.length > 2
     );
 
     setFilteredList(newFilteredListValue);
@@ -22,13 +23,14 @@ function SearchComponent({ data }) {
 
   const handleContentSearch = (event) => {
     let contentWord = event.target.form[0].value;
-    let newContentListValue = data.filter((article) =>
-      article.content.includes(contentWord)
+    let newContentListValue = data.filter(
+      (article) =>
+        article.content.includes(contentWord) && contentWord.length > 2
     );
 
     setContentList(newContentListValue);
+    console.log(contentList.length);
     setContentInput("");
-    console.log(contentList);
   };
 
   return (
@@ -67,7 +69,7 @@ function SearchComponent({ data }) {
             onClick={(e) => handleContentSearch(e)}
           />
         </form>
-        {contentList.length == 0
+        {contentList.length === 0
           ? "No match so far."
           : contentList.map((article, i) => <div key={i}>{article.title}</div>)}
       </div>
